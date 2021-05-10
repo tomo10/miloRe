@@ -1,0 +1,14 @@
+rescript = 1
+rule cp
+  command = cp $i $out
+rule touch
+ command = touch $out
+o App.cmi : cp ../bs/src/App.cmi
+o App.cmj : cp ../bs/src/App.cmj
+o App.cmt : cp ../bs/src/App.cmt
+o App.res : cp ../../src/App.res
+o ReactNativeHelloWorldUtils.cmi : cp ../bs/src/ReactNativeHelloWorldUtils.cmi
+o ReactNativeHelloWorldUtils.cmj : cp ../bs/src/ReactNativeHelloWorldUtils.cmj
+o ReactNativeHelloWorldUtils.cmt : cp ../bs/src/ReactNativeHelloWorldUtils.cmt
+o ReactNativeHelloWorldUtils.res : cp ../../src/ReactNativeHelloWorldUtils.res
+build install.stamp : touch App.cmi App.cmj ReactNativeHelloWorldUtils.cmi ReactNativeHelloWorldUtils.cmj 

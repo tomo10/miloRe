@@ -1,0 +1,19 @@
+{
+  "name": "my-rescript-expo-app",
+  "reason": {
+    "react-jsx": 3
+  },
+  "bsc-flags": ["-bs-super-errors"],
+  "bs-dependencies": ["@rescript/react", "rescript-react-native", "@rescript-bindings/expo"],
+  "sources": [
+    {
+      "dir": "src"
+    }
+  ],
+  "suffix": ".bs.js",
+  "refmt": 3,
+  "package-specs": {
+    "module": "es6",
+    "in-source": true
+  }
+}
