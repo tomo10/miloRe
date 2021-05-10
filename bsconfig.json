@@ -4,7 +4,13 @@
     "react-jsx": 3
   },
   "bsc-flags": ["-bs-super-errors"],
-  "bs-dependencies": ["@rescript/react", "rescript-react-native", "@rescript-bindings/expo"],
+  "bs-dependencies": [
+    "@mobily/stacks",
+    "@rescript/react", 
+    "rescript-react-native", 
+    "@rescript-bindings/expo", 
+    "wonka"
+  ],
   "sources": [
     {
       "dir": "src"
@@ -15,5 +21,11 @@
   "package-specs": {
     "module": "es6",
     "in-source": true
+  },
+    "gentypeconfig": {
+    "language": "typescript",
+    "shims": {
+      "ReasonReact": "ReactShim"
+    }
   }
 }

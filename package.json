@@ -11,6 +11,7 @@
     "re:build-clean": "bsb -clean-world -make-world"
   },
   "dependencies": {
+    "@mobily/stacks": "^1.1.5",
     "@rescript-bindings/expo": "^40.3.2",
     "@rescript/react": "^0.10.3",
     "expo": "~41.0.1",
@@ -19,11 +20,13 @@
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-41.0.0.tar.gz",
     "react-native-web": "~0.13.12",
-    "rescript-react-native": "^0.64.3"
+    "rescript-react-native": "^0.64.3",
+    "wonka": "^4.0.15"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "bs-platform": "^9.0.2",
+    "gentype": "^3.48.0",
     "rescript": "^9.1.2"
   },
   "private": true
