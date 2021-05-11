@@ -1,6 +1,6 @@
 # milo
 
-First project testing out React Native with ReScript. 
+Project testing out React Native with ReScript. 
 
 Install dependencies with command  $ yarn
 
