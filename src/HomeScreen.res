@@ -1,4 +1,6 @@
 open ReactNative
+open Belt
+open Stacks
 
 let styles = {
   open Style
@@ -10,19 +12,25 @@ let styles = {
   })
 }
 
+let exercises = ["Bench Press", "Military Press", "Squat", "Tricep Dip"]
+
 @react.component
 let make = () => {
 
-  <SafeAreaView>
       <ScrollView
       contentInsetAdjustmentBehavior=#automatic >
-
+      <Box padding=[4.] >
       <View style={styles["sectionContainer"]}>
         <Text style={styles["sectionTitle"]}>
-          {"This is home"->React.string}
+          {"Exercises"->React.string}
         </Text>
       </View>
+      <SearchBar />
+      <View>
+      {exercises->Array.map(x => <Text>{x->React.string}</Text>)->React.array}
+      </View>
+      </Box>
+
     </ScrollView>
-  </SafeAreaView>
 
 }

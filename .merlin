@@ -13,6 +13,8 @@ S /home/tomo/Development/Native/Milo/node_modules/@rescript-bindings/expo/lib/oc
 B /home/tomo/Development/Native/Milo/node_modules/@rescript-bindings/expo/lib/ocaml
 S /home/tomo/Development/Native/Milo/node_modules/wonka/lib/ocaml
 B /home/tomo/Development/Native/Milo/node_modules/wonka/lib/ocaml
+S /home/tomo/Development/Native/Milo/node_modules/rescript-react-navigation/lib/ocaml
+B /home/tomo/Development/Native/Milo/node_modules/rescript-react-navigation/lib/ocaml
 S src
 B lib/bs/src
 ####BSB GENERATED: NO EDIT}

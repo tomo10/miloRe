@@ -7,8 +7,12 @@ o App.cmi : cp ../bs/src/App.cmi
 o App.cmj : cp ../bs/src/App.cmj
 o App.cmt : cp ../bs/src/App.cmt
 o App.res : cp ../../src/App.res
+o SearchBar.cmi : cp ../bs/src/SearchBar.cmi
+o SearchBar.cmj : cp ../bs/src/SearchBar.cmj
+o SearchBar.cmt : cp ../bs/src/SearchBar.cmt
+o SearchBar.res : cp ../../src/SearchBar.res
 o HomeScreen.cmi : cp ../bs/src/HomeScreen.cmi
 o HomeScreen.cmj : cp ../bs/src/HomeScreen.cmj
 o HomeScreen.cmt : cp ../bs/src/HomeScreen.cmt
 o HomeScreen.res : cp ../../src/HomeScreen.res
-build install.stamp : touch App.cmi App.cmj HomeScreen.cmi HomeScreen.cmj 
+build install.stamp : touch App.cmi App.cmj SearchBar.cmi SearchBar.cmj HomeScreen.cmi HomeScreen.cmj 

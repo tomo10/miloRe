@@ -11,6 +11,7 @@
     "re:build-clean": "bsb -clean-world -make-world"
   },
   "dependencies": {
+    "@apollo/client": "^3.3.18",
     "@mobily/stacks": "^1.1.5",
     "@rescript-bindings/expo": "^40.3.2",
     "@rescript/react": "^0.10.3",
@@ -20,7 +21,9 @@
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-41.0.0.tar.gz",
     "react-native-web": "~0.13.12",
+    "rescript-apollo-client": "^2.0.1",
     "rescript-react-native": "^0.64.3",
+    "rescript-react-navigation": "^5.1.3",
     "wonka": "^4.0.15"
   },
   "devDependencies": {

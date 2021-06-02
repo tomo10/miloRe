@@ -4,19 +4,23 @@ g_finger := /home/tomo/Development/Native/Milo/node_modules/@rescript/react/lib/
 g_finger := /home/tomo/Development/Native/Milo/node_modules/rescript-react-native/lib/ocaml/install.stamp
 g_finger := /home/tomo/Development/Native/Milo/node_modules/@rescript-bindings/expo/lib/ocaml/install.stamp
 g_finger := /home/tomo/Development/Native/Milo/node_modules/wonka/lib/ocaml/install.stamp
+g_finger := /home/tomo/Development/Native/Milo/node_modules/rescript-react-navigation/lib/ocaml/install.stamp
 cleaner = /home/tomo/Development/Native/Milo/node_modules/gentype/gentype.exe
 rule astj
   command = /home/tomo/Development/Native/Milo/node_modules/bs-platform/linux/bsc.exe  -bs-v 9.0.2 -bs-jsx 3 -bs-super-errors -absname -bs-ast -o $out $i
 o src/App.ast : astj ../../src/App.res
 rule deps
-  command = /home/tomo/Development/Native/Milo/node_modules/bs-platform/linux/bsb_helper.exe -hash c00f8b3b9e8b37d4672b557a24a828a6 $in
+  command = /home/tomo/Development/Native/Milo/node_modules/bs-platform/linux/bsb_helper.exe -hash 81ce5f0663c24586d4c1fa3e6ca87145 $in
   restat = 1
 o src/App.d : deps src/App.ast
 rule mij
-  command = /home/tomo/Development/Native/Milo/node_modules/bs-platform/linux/bsc.exe -I src -I /home/tomo/Development/Native/Milo/node_modules/@mobily/stacks/lib/ocaml -I /home/tomo/Development/Native/Milo/node_modules/@rescript/react/lib/ocaml -I /home/tomo/Development/Native/Milo/node_modules/rescript-react-native/lib/ocaml -I /home/tomo/Development/Native/Milo/node_modules/@rescript-bindings/expo/lib/ocaml -I /home/tomo/Development/Native/Milo/node_modules/wonka/lib/ocaml -bs-super-errors  -bs-gentype /home/tomo/Development/Native/Milo/node_modules/gentype/gentype.exe -bs-package-name my-rescript-expo-app -bs-package-output es6:$in_d:.bs.js -bs-v $g_finger $i
+  command = /home/tomo/Development/Native/Milo/node_modules/bs-platform/linux/bsc.exe -I src -I /home/tomo/Development/Native/Milo/node_modules/@mobily/stacks/lib/ocaml -I /home/tomo/Development/Native/Milo/node_modules/@rescript/react/lib/ocaml -I /home/tomo/Development/Native/Milo/node_modules/rescript-react-native/lib/ocaml -I /home/tomo/Development/Native/Milo/node_modules/@rescript-bindings/expo/lib/ocaml -I /home/tomo/Development/Native/Milo/node_modules/wonka/lib/ocaml -I /home/tomo/Development/Native/Milo/node_modules/rescript-react-navigation/lib/ocaml -bs-super-errors  -bs-gentype /home/tomo/Development/Native/Milo/node_modules/gentype/gentype.exe -bs-package-name my-rescript-expo-app -bs-package-output es6:$in_d:.bs.js -bs-v $g_finger $i
   dyndep = 1
   restat = 1
 o src/App.cmj src/App.cmi ../../src/App.bs.js : mij src/App.ast
+o src/SearchBar.ast : astj ../../src/SearchBar.res
+o src/SearchBar.d : deps src/SearchBar.ast
+o src/SearchBar.cmj src/SearchBar.cmi ../../src/SearchBar.bs.js : mij src/SearchBar.ast
 o src/HomeScreen.ast : astj ../../src/HomeScreen.res
 o src/HomeScreen.d : deps src/HomeScreen.ast
 o src/HomeScreen.cmj src/HomeScreen.cmi ../../src/HomeScreen.bs.js : mij src/HomeScreen.ast
