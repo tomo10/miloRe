@@ -4,34 +4,51 @@ import * as Belt_Array from "bs-platform/lib/es6/belt_Array.js";
 
 var dummyExercises = [
   {
+    id: 0,
     title: "Bench Press",
     bodyPart: "Chest"
   },
   {
+    id: 1,
     title: "Military Press",
     bodyPart: "Deltoids"
   },
   {
+    id: 2,
     title: "Squat",
     bodyPart: "Tricep Dip"
   },
   {
+    id: 3,
     title: "Test",
     bodyPart: "Tricep Dip"
   }
 ];
 
 var initialState = {
-  exercises: dummyExercises
+  exercises: dummyExercises,
+  nextId: 5
 };
 
 function reducer(state, action) {
-  var exercises = Belt_Array.concat(state.exercises, [{
-          title: action.title,
-          bodyPart: action.bodyPart
-        }]);
+  if (action.TAG === /* AddExercise */0) {
+    var exercises = Belt_Array.concat(state.exercises, [{
+            id: state.nextId,
+            title: action.title,
+            bodyPart: action.bodyPart
+          }]);
+    return {
+            exercises: exercises,
+            nextId: state.nextId
+          };
+  }
+  var id = action._0;
+  var exercises$1 = state.exercises.filter(function (ex) {
+        return ex.id !== id;
+      });
   return {
-          exercises: exercises
+          exercises: exercises$1,
+          nextId: state.nextId
         };
 }
 

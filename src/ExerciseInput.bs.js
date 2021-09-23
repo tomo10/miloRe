@@ -7,7 +7,8 @@ import * as ReactNative from "react-native";
 var styles = ReactNative.StyleSheet.create({
       row: {
         flexDirection: "row",
-        paddingHorizontal: 24
+        paddingHorizontal: 24,
+        width: 120
       }
     });
 
@@ -38,7 +39,8 @@ function ExerciseInput(Props) {
                       Curry._1(setExerciseInput, (function (param) {
                               return "";
                             }));
-                      return Curry._1(dispatch, /* AddExercise */{
+                      return Curry._1(dispatch, {
+                                  TAG: /* AddExercise */0,
                                   title: exerciseInput,
                                   bodyPart: "Upper"
                                 });

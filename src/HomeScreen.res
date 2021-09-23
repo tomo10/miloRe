@@ -31,7 +31,7 @@ let make = () => {
       // <SearchBar setSearchTerm  />
       <ExerciseInput dispatch />
       <Stack space=[4.]> 
-        {state.exercises->Array.mapWithIndex((index, x) => <Text key={index->Belt.Int.toString} >{x.title->React.string}</Text> )->React.array}
+        {state.exercises->Array.mapWithIndex((index, x) => <ExerciseRow dispatch title={x.title} index />  )->React.array}
       </Stack>
       </Box>
 

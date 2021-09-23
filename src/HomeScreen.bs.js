@@ -3,6 +3,7 @@
 import * as Store from "./Store.bs.js";
 import * as React from "react";
 import * as Belt_Array from "bs-platform/lib/es6/belt_Array.js";
+import * as ExerciseRow from "./ExerciseRow.bs.js";
 import * as ReactNative from "react-native";
 import * as ExerciseInput from "./ExerciseInput.bs.js";
 import * as Stacks_component_Box from "@mobily/stacks/src/Stacks_component_Box.bs.js";
@@ -29,6 +30,7 @@ var styles = ReactNative.StyleSheet.create({
 
 function HomeScreen(Props) {
   var match = React.useReducer(Store.reducer, Store.initialState);
+  var dispatch = match[1];
   return React.createElement(ReactNative.ScrollView, {
               contentInsetAdjustmentBehavior: "automatic",
               children: React.createElement(Stacks_component_Box.make, {
@@ -41,13 +43,14 @@ function HomeScreen(Props) {
                               style: styles.sectionTitle
                             })
                       }), React.createElement(ExerciseInput.make, {
-                        dispatch: match[1]
+                        dispatch: dispatch
                       }), React.createElement(Stacks_component_Stack.make, {
                         space: [4],
                         children: Belt_Array.mapWithIndex(match[0].exercises, (function (index, x) {
-                                return React.createElement(ReactNative.Text, {
-                                            children: x.title,
-                                            key: String(index)
+                                return React.createElement(ExerciseRow.make, {
+                                            index: index,
+                                            title: x.title,
+                                            dispatch: dispatch
                                           });
                               }))
                       }))

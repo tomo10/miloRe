@@ -3,7 +3,7 @@ open ReactNative
 let styles = {
   open Style
   StyleSheet.create({
-    "row": viewStyle(~flexDirection=#row, ~paddingHorizontal=24.->dp, ()),
+    "row": viewStyle(~flexDirection=#row, ~paddingHorizontal=24.->dp, ~width=120.->dp, ()),
   })
 }
 

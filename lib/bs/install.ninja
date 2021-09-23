@@ -19,8 +19,12 @@ o HomeScreen.cmi : cp ../bs/src/HomeScreen.cmi
 o HomeScreen.cmj : cp ../bs/src/HomeScreen.cmj
 o HomeScreen.cmt : cp ../bs/src/HomeScreen.cmt
 o HomeScreen.res : cp ../../src/HomeScreen.res
+o ExerciseRow.cmi : cp ../bs/src/ExerciseRow.cmi
+o ExerciseRow.cmj : cp ../bs/src/ExerciseRow.cmj
+o ExerciseRow.cmt : cp ../bs/src/ExerciseRow.cmt
+o ExerciseRow.res : cp ../../src/ExerciseRow.res
 o ExerciseInput.cmi : cp ../bs/src/ExerciseInput.cmi
 o ExerciseInput.cmj : cp ../bs/src/ExerciseInput.cmj
 o ExerciseInput.cmt : cp ../bs/src/ExerciseInput.cmt
 o ExerciseInput.res : cp ../../src/ExerciseInput.res
-build install.stamp : touch App.cmi App.cmj Store.cmi Store.cmj SearchBar.cmi SearchBar.cmj HomeScreen.cmi HomeScreen.cmj ExerciseInput.cmi ExerciseInput.cmj 
+build install.stamp : touch App.cmi App.cmj Store.cmi Store.cmj SearchBar.cmi SearchBar.cmj HomeScreen.cmi HomeScreen.cmj ExerciseRow.cmi ExerciseRow.cmj ExerciseInput.cmi ExerciseInput.cmj 

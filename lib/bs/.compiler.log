@@ -1,14 +1,2 @@
-#Start(1632418279447)
-
-  Warning number 23
-  /home/tomo/Development/Native/Milo/src/Store.res:39:5-25
-  
-  37 │   | AddExercise({title, bodyPart}) => {
-  38 │     let exercises = Array.concat(state.exercises, [{title, bodyPart}])
-  39 │     {...state, exercises}
-  40 │   }
-  41 │ }
-  
-  All the fields are already explicitly listed in this record. You can remove the `...` spread.
-  
-#Done(1632418279457)
+#Start(1632421759090)
+#Done(1632421759090)
