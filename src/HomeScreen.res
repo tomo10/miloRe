@@ -13,19 +13,12 @@ let styles = {
   })
 }
 
-let exercises: array<Store.exercise> = [
-  {title: "Bench Press", bodyPart: "Chest"}, 
-  {title: "Military Press", bodyPart: "Deltoids"}, 
-  {title: "Squat", bodyPart: "Tricep Dip"}
-  ]
 
 @react.component
 let make = () => {
-  let (searchTerm, setSearchTerm) = React.useState(() => "")
-  // let includesTerm = x => Js.String.includes(searchTerm, x) == true
+  let (state, dispatch) = React.useReducer(Store.reducer, Store.initialState)
+  // let (searchTerm, setSearchTerm) = React.useState(() => "")
   // let exTitles = exercises->Belt.Array.keep(ex => ex.title === searchTerm)
-  // let includesTerm = x => Js.String.includes(searchTerm, x) == true
-  // let filteredEx = exTitles->filter(includesTerm)
 
       <ScrollView
         contentInsetAdjustmentBehavior=#automatic >
@@ -35,10 +28,10 @@ let make = () => {
           {"Exercises"->React.string}
         </Text>
       </View>
-      <SearchBar setSearchTerm  />
-      <TextInput />
+      // <SearchBar setSearchTerm  />
+      <ExerciseInput dispatch />
       <Stack space=[4.]> 
-        {exercises->Array.mapWithIndex((index, x) => <Text key={index->Belt.Int.toString} >{x.title->React.string}</Text> )->React.array}
+        {state.exercises->Array.mapWithIndex((index, x) => <Text key={index->Belt.Int.toString} >{x.title->React.string}</Text> )->React.array}
       </Stack>
       </Box>
 

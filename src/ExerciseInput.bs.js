@@ -4,24 +4,53 @@ import * as Curry from "bs-platform/lib/es6/curry.js";
 import * as React from "react";
 import * as ReactNative from "react-native";
 
+var styles = ReactNative.StyleSheet.create({
+      row: {
+        flexDirection: "row",
+        paddingHorizontal: 24
+      }
+    });
+
 function ExerciseInput(Props) {
+  var dispatch = Props.dispatch;
   var match = React.useState(function () {
         return "";
       });
   var setExerciseInput = match[1];
-  return React.createElement(ReactNative.TextInput, {
-              onChangeText: (function (text) {
-                  return Curry._1(setExerciseInput, (function (param) {
-                                return text;
-                              }));
-                })
-            });
+  var exerciseInput = match[0];
+  return React.createElement(ReactNative.View, {
+              style: styles.row,
+              children: null
+            }, React.createElement(ReactNative.TextInput, {
+                  onChangeText: (function (text) {
+                      return Curry._1(setExerciseInput, (function (param) {
+                                    return text;
+                                  }));
+                    })
+                }), React.createElement(ReactNative.Pressable, {
+                  children: (function (interactionState) {
+                      return React.createElement(ReactNative.Text, {
+                                  children: "+"
+                                });
+                    }),
+                  onPress: (function (param) {
+                      console.log("addExercise()");
+                      Curry._1(setExerciseInput, (function (param) {
+                              return "";
+                            }));
+                      return Curry._1(dispatch, /* AddExercise */{
+                                  title: exerciseInput,
+                                  bodyPart: "Upper"
+                                });
+                    })
+                }));
 }
 
 var make = ExerciseInput;
 
 export {
+  styles ,
   make ,
   
 }
-/* react Not a pure module */
+/* styles Not a pure module */

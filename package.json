@@ -29,7 +29,10 @@
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "bs-platform": "^9.0.2",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "gentype": "^3.48.0",
+    "prettier": "2.4.1",
     "rescript": "^9.1.2"
   },
   "private": true

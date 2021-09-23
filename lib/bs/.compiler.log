@@ -1,39 +1,14 @@
-#Start(1632409034527)
+#Start(1632418279447)
 
-  Warning number 27
-  /home/tomo/Development/Native/Milo/src/ExerciseInput.res:5:8-20
+  Warning number 23
+  /home/tomo/Development/Native/Milo/src/Store.res:39:5-25
   
-  3 │ @react.component
-  4 │ let make = () => {
-  5 │   let (exerciseInput, setExerciseInput) = React.useState(_ => "")
-  6 │   let resetInput = _e => {
-  7 │     setExerciseInput(_ => "")
+  37 │   | AddExercise({title, bodyPart}) => {
+  38 │     let exercises = Array.concat(state.exercises, [{title, bodyPart}])
+  39 │     {...state, exercises}
+  40 │   }
+  41 │ }
   
-  unused variable exerciseInput.
+  All the fields are already explicitly listed in this record. You can remove the `...` spread.
   
-
-  Warning number 26
-  /home/tomo/Development/Native/Milo/src/ExerciseInput.res:6:7-16
-  
-  4 │ let make = () => {
-  5 │   let (exerciseInput, setExerciseInput) = React.useState(_ => "")
-  6 │   let resetInput = _e => {
-  7 │     setExerciseInput(_ => "")
-  8 │   }
-  
-  unused variable resetInput.
-  
-
-  Warning number 27
-  /home/tomo/Development/Native/Milo/src/HomeScreen.res:24:8-17
-  
-  22 │ @react.component
-  23 │ let make = () => {
-  24 │   let (searchTerm, setSearchTerm) = React.useState(() => "")
-  25 │   // let includesTerm = x => Js.String.includes(searchTerm, x) == true
-  26 │   // let exTitles = exercises->Belt.Array.keep(ex => ex.title === sear
-       chTerm)
-  
-  unused variable searchTerm.
-  
-#Done(1632409034555)
+#Done(1632418279457)
