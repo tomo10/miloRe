@@ -1,7 +1,7 @@
 open ReactNative
 open Belt
 open Stacks
-open Js_array2
+// open Js_array2
 
 let styles = {
   open Style
@@ -36,7 +36,8 @@ let make = () => {
         </Text>
       </View>
       <SearchBar setSearchTerm  />
-      <Stack space=[2.]> 
+      <TextInput />
+      <Stack space=[4.]> 
         {exercises->Array.mapWithIndex((index, x) => <Text key={index->Belt.Int.toString} >{x.title->React.string}</Text> )->React.array}
       </Stack>
       </Box>

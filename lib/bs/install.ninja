@@ -19,4 +19,8 @@ o HomeScreen.cmi : cp ../bs/src/HomeScreen.cmi
 o HomeScreen.cmj : cp ../bs/src/HomeScreen.cmj
 o HomeScreen.cmt : cp ../bs/src/HomeScreen.cmt
 o HomeScreen.res : cp ../../src/HomeScreen.res
-build install.stamp : touch App.cmi App.cmj Store.cmi Store.cmj SearchBar.cmi SearchBar.cmj HomeScreen.cmi HomeScreen.cmj 
+o ExerciseInput.cmi : cp ../bs/src/ExerciseInput.cmi
+o ExerciseInput.cmj : cp ../bs/src/ExerciseInput.cmj
+o ExerciseInput.cmt : cp ../bs/src/ExerciseInput.cmt
+o ExerciseInput.res : cp ../../src/ExerciseInput.res
+build install.stamp : touch App.cmi App.cmj Store.cmi Store.cmj SearchBar.cmi SearchBar.cmj HomeScreen.cmi HomeScreen.cmj ExerciseInput.cmi ExerciseInput.cmj 

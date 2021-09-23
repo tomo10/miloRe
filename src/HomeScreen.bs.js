@@ -58,8 +58,8 @@ function HomeScreen(Props) {
                             })
                       }), React.createElement(SearchBar.make, {
                         setSearchTerm: match[1]
-                      }), React.createElement(Stacks_component_Stack.make, {
-                        space: [2],
+                      }), React.createElement(ReactNative.TextInput, {}), React.createElement(Stacks_component_Stack.make, {
+                        space: [4],
                         children: Belt_Array.mapWithIndex(exercises, (function (index, x) {
                                 return React.createElement(ReactNative.Text, {
                                             children: x.title,

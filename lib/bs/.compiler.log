@@ -1,15 +1,27 @@
-#Start(1632405583693)
+#Start(1632409034527)
 
-  Warning number 33
-  /home/tomo/Development/Native/Milo/src/HomeScreen.res:4:1-14
+  Warning number 27
+  /home/tomo/Development/Native/Milo/src/ExerciseInput.res:5:8-20
   
-  2 │ open Belt
-  3 │ open Stacks
-  4 │ open Js_array2
-  5 │ 
-  6 │ let styles = {
+  3 │ @react.component
+  4 │ let make = () => {
+  5 │   let (exerciseInput, setExerciseInput) = React.useState(_ => "")
+  6 │   let resetInput = _e => {
+  7 │     setExerciseInput(_ => "")
   
-  unused open Js_array2.
+  unused variable exerciseInput.
+  
+
+  Warning number 26
+  /home/tomo/Development/Native/Milo/src/ExerciseInput.res:6:7-16
+  
+  4 │ let make = () => {
+  5 │   let (exerciseInput, setExerciseInput) = React.useState(_ => "")
+  6 │   let resetInput = _e => {
+  7 │     setExerciseInput(_ => "")
+  8 │   }
+  
+  unused variable resetInput.
   
 
   Warning number 27
@@ -24,4 +36,4 @@
   
   unused variable searchTerm.
   
-#Done(1632405583740)
+#Done(1632409034555)

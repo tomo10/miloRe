@@ -10,7 +10,7 @@ rule astj
   command = /home/tomo/Development/Native/Milo/node_modules/bs-platform/linux/bsc.exe  -bs-v 9.0.2 -bs-jsx 3 -bs-super-errors -absname -bs-ast -o $out $i
 o src/App.ast : astj ../../src/App.res
 rule deps
-  command = /home/tomo/Development/Native/Milo/node_modules/bs-platform/linux/bsb_helper.exe -hash 1bb0a7e93be096df6f18f858c8f66d4b $in
+  command = /home/tomo/Development/Native/Milo/node_modules/bs-platform/linux/bsb_helper.exe -hash b8d167b5b2d3b15e58253facdc88b401 $in
   restat = 1
 o src/App.d : deps src/App.ast
 rule mij
@@ -27,3 +27,6 @@ o src/SearchBar.cmj src/SearchBar.cmi ../../src/SearchBar.bs.js : mij src/Search
 o src/HomeScreen.ast : astj ../../src/HomeScreen.res
 o src/HomeScreen.d : deps src/HomeScreen.ast
 o src/HomeScreen.cmj src/HomeScreen.cmi ../../src/HomeScreen.bs.js : mij src/HomeScreen.ast
+o src/ExerciseInput.ast : astj ../../src/ExerciseInput.res
+o src/ExerciseInput.d : deps src/ExerciseInput.ast
+o src/ExerciseInput.cmj src/ExerciseInput.cmi ../../src/ExerciseInput.bs.js : mij src/ExerciseInput.ast
