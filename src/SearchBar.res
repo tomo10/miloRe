@@ -2,10 +2,13 @@ open ReactNative
 open Stacks
 
 @react.component
-let make = () => {
+let make = (~setSearchTerm) => {
 
-  <Stack space=[2.] horizontal=[true] >
+  <Stack space=[3.] horizontal=[true] >
     <Expo.VectorIcons.Ionicons name="search" size={32} color="orange" />
-    <Text>{"Search"->React.string}</Text>
+    <TextInput placeholder="Search" onChangeText={text => {
+      setSearchTerm(_ => text)
+    }} 
+    />
   </Stack>
 }

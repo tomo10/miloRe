@@ -10,7 +10,7 @@ rule astj
   command = /home/tomo/Development/Native/Milo/node_modules/bs-platform/linux/bsc.exe  -bs-v 9.0.2 -bs-jsx 3 -bs-super-errors -absname -bs-ast -o $out $i
 o src/App.ast : astj ../../src/App.res
 rule deps
-  command = /home/tomo/Development/Native/Milo/node_modules/bs-platform/linux/bsb_helper.exe -hash 81ce5f0663c24586d4c1fa3e6ca87145 $in
+  command = /home/tomo/Development/Native/Milo/node_modules/bs-platform/linux/bsb_helper.exe -hash 1bb0a7e93be096df6f18f858c8f66d4b $in
   restat = 1
 o src/App.d : deps src/App.ast
 rule mij
@@ -18,6 +18,9 @@ rule mij
   dyndep = 1
   restat = 1
 o src/App.cmj src/App.cmi ../../src/App.bs.js : mij src/App.ast
+o src/Store.ast : astj ../../src/Store.res
+o src/Store.d : deps src/Store.ast
+o src/Store.cmj src/Store.cmi ../../src/Store.bs.js : mij src/Store.ast
 o src/SearchBar.ast : astj ../../src/SearchBar.res
 o src/SearchBar.d : deps src/SearchBar.ast
 o src/SearchBar.cmj src/SearchBar.cmi ../../src/SearchBar.bs.js : mij src/SearchBar.ast

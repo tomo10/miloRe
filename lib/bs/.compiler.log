@@ -1,2 +1,27 @@
-#Start(1622637827340)
-#Done(1622637827340)
+#Start(1632405583693)
+
+  Warning number 33
+  /home/tomo/Development/Native/Milo/src/HomeScreen.res:4:1-14
+  
+  2 │ open Belt
+  3 │ open Stacks
+  4 │ open Js_array2
+  5 │ 
+  6 │ let styles = {
+  
+  unused open Js_array2.
+  
+
+  Warning number 27
+  /home/tomo/Development/Native/Milo/src/HomeScreen.res:24:8-17
+  
+  22 │ @react.component
+  23 │ let make = () => {
+  24 │   let (searchTerm, setSearchTerm) = React.useState(() => "")
+  25 │   // let includesTerm = x => Js.String.includes(searchTerm, x) == true
+  26 │   // let exTitles = exercises->Belt.Array.keep(ex => ex.title === sear
+       chTerm)
+  
+  unused variable searchTerm.
+  
+#Done(1632405583740)

@@ -5,10 +5,11 @@ import * as SearchBar from "./SearchBar.bs.js";
 import * as Belt_Array from "bs-platform/lib/es6/belt_Array.js";
 import * as ReactNative from "react-native";
 import * as Stacks_component_Box from "@mobily/stacks/src/Stacks_component_Box.bs.js";
+import * as Stacks_component_Stack from "@mobily/stacks/src/Stacks_component_Stack.bs.js";
 
 var styles = ReactNative.StyleSheet.create({
       sectionContainer: {
-        marginTop: 32,
+        marginTop: 62,
         paddingHorizontal: 24
       },
       sectionTitle: {
@@ -26,17 +27,28 @@ var styles = ReactNative.StyleSheet.create({
     });
 
 var exercises = [
-  "Bench Press",
-  "Military Press",
-  "Squat",
-  "Tricep Dip"
+  {
+    title: "Bench Press",
+    bodyPart: "Chest"
+  },
+  {
+    title: "Military Press",
+    bodyPart: "Deltoids"
+  },
+  {
+    title: "Squat",
+    bodyPart: "Tricep Dip"
+  }
 ];
 
 function HomeScreen(Props) {
+  var match = React.useState(function () {
+        return "";
+      });
   return React.createElement(ReactNative.ScrollView, {
               contentInsetAdjustmentBehavior: "automatic",
               children: React.createElement(Stacks_component_Box.make, {
-                    padding: [4],
+                    padding: [8],
                     children: null
                   }, React.createElement(ReactNative.View, {
                         style: styles.sectionContainer,
@@ -44,10 +56,14 @@ function HomeScreen(Props) {
                               children: "Exercises",
                               style: styles.sectionTitle
                             })
-                      }), React.createElement(SearchBar.make, {}), React.createElement(ReactNative.View, {
-                        children: Belt_Array.map(exercises, (function (x) {
+                      }), React.createElement(SearchBar.make, {
+                        setSearchTerm: match[1]
+                      }), React.createElement(Stacks_component_Stack.make, {
+                        space: [2],
+                        children: Belt_Array.mapWithIndex(exercises, (function (index, x) {
                                 return React.createElement(ReactNative.Text, {
-                                            children: x
+                                            children: x.title,
+                                            key: String(index)
                                           });
                               }))
                       }))
