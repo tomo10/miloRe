@@ -10,7 +10,7 @@ rule astj
   command = /home/tomo/Development/Native/Milo/node_modules/bs-platform/linux/bsc.exe  -bs-v 9.0.2 -bs-jsx 3 -bs-super-errors -absname -bs-ast -o $out $i
 o src/App.ast : astj ../../src/App.res
 rule deps
-  command = /home/tomo/Development/Native/Milo/node_modules/bs-platform/linux/bsb_helper.exe -hash 5182cfdb7282d7d8991441e5e86e20b7 $in
+  command = /home/tomo/Development/Native/Milo/node_modules/bs-platform/linux/bsb_helper.exe -hash e7c347b76033f7dd86d0134f1c17f24c $in
   restat = 1
 o src/App.d : deps src/App.ast
 rule mij
@@ -21,6 +21,9 @@ o src/App.cmj src/App.cmi ../../src/App.bs.js : mij src/App.ast
 o src/Store.ast : astj ../../src/Store.res
 o src/Store.d : deps src/Store.ast
 o src/Store.cmj src/Store.cmi ../../src/Store.bs.js : mij src/Store.ast
+o src/Theme.ast : astj ../../src/Theme.res
+o src/Theme.d : deps src/Theme.ast
+o src/Theme.cmj src/Theme.cmi ../../src/Theme.bs.js : mij src/Theme.ast
 o src/SearchBar.ast : astj ../../src/SearchBar.res
 o src/SearchBar.d : deps src/SearchBar.ast
 o src/SearchBar.cmj src/SearchBar.cmi ../../src/SearchBar.bs.js : mij src/SearchBar.ast

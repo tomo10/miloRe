@@ -9,9 +9,15 @@ import * as ExerciseInput from "./ExerciseInput.bs.js";
 import * as Stacks_component_Box from "@mobily/stacks/src/Stacks_component_Box.bs.js";
 import * as Stacks_component_Stack from "@mobily/stacks/src/Stacks_component_Stack.bs.js";
 
+var orange_500 = "rgb(100, 50, 50)";
+
 var styles = ReactNative.StyleSheet.create({
-      sectionContainer: {
+      container: {
+        backgroundColor: orange_500,
         marginTop: 62,
+        paddingHorizontal: 24
+      },
+      sectionContainer: {
         paddingHorizontal: 24
       },
       sectionTitle: {
@@ -25,6 +31,10 @@ var styles = ReactNative.StyleSheet.create({
       },
       highlight: {
         fontWeight: "700"
+      },
+      exerciseList: {
+        alignItems: "center",
+        justifyContent: "center"
       }
     });
 
@@ -35,6 +45,7 @@ function HomeScreen(Props) {
               contentInsetAdjustmentBehavior: "automatic",
               children: React.createElement(Stacks_component_Box.make, {
                     padding: [8],
+                    style: styles.container,
                     children: null
                   }, React.createElement(ReactNative.View, {
                         style: styles.sectionContainer,
@@ -45,7 +56,8 @@ function HomeScreen(Props) {
                       }), React.createElement(ExerciseInput.make, {
                         dispatch: dispatch
                       }), React.createElement(Stacks_component_Stack.make, {
-                        space: [4],
+                        space: [6],
+                        style: styles.exerciseList,
                         children: Belt_Array.mapWithIndex(match[0].exercises, (function (index, x) {
                                 return React.createElement(ExerciseRow.make, {
                                             index: index,
@@ -60,6 +72,7 @@ function HomeScreen(Props) {
 var make = HomeScreen;
 
 export {
+  orange_500 ,
   styles ,
   make ,
   

@@ -11,6 +11,10 @@ o Store.cmi : cp ../bs/src/Store.cmi
 o Store.cmj : cp ../bs/src/Store.cmj
 o Store.cmt : cp ../bs/src/Store.cmt
 o Store.res : cp ../../src/Store.res
+o Theme.cmi : cp ../bs/src/Theme.cmi
+o Theme.cmj : cp ../bs/src/Theme.cmj
+o Theme.cmt : cp ../bs/src/Theme.cmt
+o Theme.res : cp ../../src/Theme.res
 o SearchBar.cmi : cp ../bs/src/SearchBar.cmi
 o SearchBar.cmj : cp ../bs/src/SearchBar.cmj
 o SearchBar.cmt : cp ../bs/src/SearchBar.cmt
@@ -27,4 +31,4 @@ o ExerciseInput.cmi : cp ../bs/src/ExerciseInput.cmi
 o ExerciseInput.cmj : cp ../bs/src/ExerciseInput.cmj
 o ExerciseInput.cmt : cp ../bs/src/ExerciseInput.cmt
 o ExerciseInput.res : cp ../../src/ExerciseInput.res
-build install.stamp : touch App.cmi App.cmj Store.cmi Store.cmj SearchBar.cmi SearchBar.cmj HomeScreen.cmi HomeScreen.cmj ExerciseRow.cmi ExerciseRow.cmj ExerciseInput.cmi ExerciseInput.cmj 
+build install.stamp : touch App.cmi App.cmj Store.cmi Store.cmj Theme.cmi Theme.cmj SearchBar.cmi SearchBar.cmj HomeScreen.cmi HomeScreen.cmj ExerciseRow.cmi ExerciseRow.cmj ExerciseInput.cmi ExerciseInput.cmj 

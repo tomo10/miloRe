@@ -6,9 +6,11 @@ import * as ReactNative from "react-native";
 
 var styles = ReactNative.StyleSheet.create({
       row: {
+        backgroundColor: "rgb(200, 100, 50)",
         flexDirection: "row",
+        justifyContent: "space-between",
         paddingHorizontal: 24,
-        width: 120
+        width: 180
       }
     });
 
