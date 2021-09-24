@@ -6,9 +6,15 @@ let styles = {
     "row": viewStyle(
       ~flexDirection=#row, 
       ~justifyContent=#spaceBetween, 
-      ~paddingHorizontal=24.->dp, 
-      ~width=180.->dp, 
-      ~backgroundColor="rgb(200, 100, 50)",
+      ~paddingHorizontal=8.->dp, 
+      ~borderColor=Theme.color.grey_200,
+      ~borderWidth=1.,
+      // ~backgroundColor="rgb(200, 100, 50)",
+     ()),
+    "input": viewStyle(
+      // ~width=180.->dp, 
+      ~flex=1.,
+      // ~backgroundColor="rgb(100, 0, 50)",
      ()),
   })
 }
@@ -25,10 +31,13 @@ let make = (~dispatch: Store.action => unit) => {
     resetInput()
     dispatch(AddExercise({title: exerciseInput, bodyPart: "Upper"}))
   }
-<View style={styles["row"]}>
-  <TextInput onChangeText={text => setExerciseInput(_ => text)} />
-  <Pressable onPress={_ => addExercise()}>
-    {ReactNative.Pressable.interactionState => <Text> {"+"->React.string} </Text>}
-  </Pressable>
+
+  <View style={styles["row"]}>
+    <TextInput style={styles["input"]} onChangeText={text => setExerciseInput(_ => text)} />
+    <Pressable onPress={_ => addExercise()}>
+      {ReactNative.Pressable.interactionState => 
+      <Expo.VectorIcons.Ionicons name="add" size={32} color="orange" />
+    }
+    </Pressable>
   </View>
 }

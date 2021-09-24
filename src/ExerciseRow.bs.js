@@ -8,7 +8,7 @@ import * as Stacks_component_Box from "@mobily/stacks/src/Stacks_component_Box.b
 
 var styles = ReactNative.StyleSheet.create({
       container: {
-        backgroundColor: Theme.color.blue_100,
+        backgroundColor: Theme.color.orange_500,
         height: 50
       },
       exerciseList: {

@@ -4,7 +4,7 @@ open Stacks
 let styles = {
   open Style
   StyleSheet.create({
-    "container": viewStyle(~backgroundColor=Theme.color.blue_100, ~height=50.->dp, ()),
+    "container": viewStyle(~backgroundColor=Theme.color.orange_500, ~height=50.->dp, ()),
     "exerciseList": viewStyle(~alignItems=#center, ~justifyContent=#center, ()),
   })
 }
