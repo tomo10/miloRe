@@ -12,11 +12,11 @@ let styles = {
 @react.component
 let make = (~index: int, ~exercise: Store.exercise, ~dispatch: Store.action => unit) => {
 
-<Box key={index->Belt.Int.toString} style={styles["container"]} >
   <Pressable onPress={_ => dispatch(Store.AddExercise(exercise))}>
     { ReactNative.Pressable.interactionState => 
+    <Box key={index->Belt.Int.toString} style={styles["container"]} >
       <Text key={index->Belt.Int.toString} >{exercise.title->React.string}</Text> 
+    </Box>
     }
   </Pressable>
-  </Box>
 }

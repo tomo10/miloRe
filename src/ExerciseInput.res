@@ -12,9 +12,7 @@ let styles = {
       // ~backgroundColor="rgb(200, 100, 50)",
      ()),
     "input": viewStyle(
-      // ~width=180.->dp, 
       ~flex=1.,
-      // ~backgroundColor="rgb(100, 0, 50)",
      ()),
   })
 }
@@ -25,11 +23,18 @@ let make = (~dispatch: Store.action => unit) => {
   let resetInput = _e => {
     setExerciseInput(_ => "")
   }
+  // have buttons / toggles to select body part.
 
   let addExercise = () => {
     Js.log("addExercise()")
     resetInput()
-    // dispatch(AddExercise({title: exerciseInput, bodyPart: "Upper"}))
+    let userExercise: Store.exercise = {
+      id: 123, 
+      title: exerciseInput, 
+      bodyPart: "HardBody", 
+      equipment: "ToggleSelect" 
+    }
+    dispatch(AddExercise(userExercise))
   }
 
   <View style={styles["row"]}>

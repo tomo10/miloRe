@@ -22,23 +22,23 @@ function ExerciseRow(Props) {
   var index = Props.index;
   var exercise = Props.exercise;
   var dispatch = Props.dispatch;
-  return React.createElement(Stacks_component_Box.make, {
-              style: styles.container,
-              children: React.createElement(ReactNative.Pressable, {
-                    children: (function (interactionState) {
-                        return React.createElement(ReactNative.Text, {
+  return React.createElement(ReactNative.Pressable, {
+              children: (function (interactionState) {
+                  return React.createElement(Stacks_component_Box.make, {
+                              style: styles.container,
+                              children: React.createElement(ReactNative.Text, {
                                     children: exercise.title,
                                     key: String(index)
-                                  });
-                      }),
-                    onPress: (function (param) {
-                        return Curry._1(dispatch, {
-                                    TAG: /* AddExercise */0,
-                                    _0: exercise
-                                  });
-                      })
-                  }),
-              key: String(index)
+                                  }),
+                              key: String(index)
+                            });
+                }),
+              onPress: (function (param) {
+                  return Curry._1(dispatch, {
+                              TAG: /* AddExercise */0,
+                              _0: exercise
+                            });
+                })
             });
 }
 
