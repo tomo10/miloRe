@@ -1,1 +1,1 @@
-src/HomeScreen.cmj : src/ExerciseInput.cmj src/ExerciseInput.cmi src/ExerciseRow.cmj src/ExerciseRow.cmi src/SearchBar.cmj src/SearchBar.cmi src/Store.cmj src/Store.cmi src/Theme.cmj src/Theme.cmi
+src/HomeScreen.cmj : src/ExerciseInput.cmj src/ExerciseInput.cmi src/ExerciseRow.cmj src/ExerciseRow.cmi src/SearchBar.cmj src/SearchBar.cmi src/Store.cmj src/Store.cmi src/Theme.cmj src/Theme.cmi src/WorkoutTile.cmj src/WorkoutTile.cmi

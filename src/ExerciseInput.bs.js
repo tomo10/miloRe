@@ -20,12 +20,10 @@ var styles = ReactNative.StyleSheet.create({
     });
 
 function ExerciseInput(Props) {
-  var dispatch = Props.dispatch;
   var match = React.useState(function () {
         return "";
       });
   var setExerciseInput = match[1];
-  var exerciseInput = match[0];
   return React.createElement(ReactNative.View, {
               style: styles.row,
               children: null
@@ -46,14 +44,9 @@ function ExerciseInput(Props) {
                     }),
                   onPress: (function (param) {
                       console.log("addExercise()");
-                      Curry._1(setExerciseInput, (function (param) {
-                              return "";
-                            }));
-                      return Curry._1(dispatch, {
-                                  TAG: /* AddExercise */0,
-                                  title: exerciseInput,
-                                  bodyPart: "Upper"
-                                });
+                      return Curry._1(setExerciseInput, (function (param) {
+                                    return "";
+                                  }));
                     })
                 }));
 }

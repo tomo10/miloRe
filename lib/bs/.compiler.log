@@ -1,2 +1,26 @@
-#Start(1632845296614)
-#Done(1632845296614)
+#Start(1632846907748)
+
+  Warning number 27
+  /home/tomo/Development/Native/Milo/src/ExerciseInput.res:23:13-21
+  
+  21 │ 
+  22 │ @react.component
+  23 │ let make = (~dispatch: Store.action => unit) => {
+  24 │   let (exerciseInput, setExerciseInput) = React.useState(_ => "")
+  25 │   let resetInput = _e => {
+  
+  unused variable dispatch.
+  
+
+  Warning number 27
+  /home/tomo/Development/Native/Milo/src/ExerciseInput.res:24:8-20
+  
+  22 │ @react.component
+  23 │ let make = (~dispatch: Store.action => unit) => {
+  24 │   let (exerciseInput, setExerciseInput) = React.useState(_ => "")
+  25 │   let resetInput = _e => {
+  26 │     setExerciseInput(_ => "")
+  
+  unused variable exerciseInput.
+  
+#Done(1632846907769)

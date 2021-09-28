@@ -8,9 +8,11 @@ import * as Stacks_component_Box from "@mobily/stacks/src/Stacks_component_Box.b
 
 var styles = ReactNative.StyleSheet.create({
       container: {
-        backgroundColor: Theme.color.orange_500,
-        height: 50,
-        marginVertical: 6
+        borderColor: Theme.color.orange_500,
+        borderWidth: 1,
+        height: 100,
+        marginHorizontal: 6,
+        width: 100
       },
       exerciseList: {
         alignItems: "center",
@@ -18,7 +20,7 @@ var styles = ReactNative.StyleSheet.create({
       }
     });
 
-function ExerciseRow(Props) {
+function WorkoutTile(Props) {
   var index = Props.index;
   var exercise = Props.exercise;
   var dispatch = Props.dispatch;
@@ -33,8 +35,8 @@ function ExerciseRow(Props) {
                       }),
                     onPress: (function (param) {
                         return Curry._1(dispatch, {
-                                    TAG: /* AddExercise */0,
-                                    _0: exercise
+                                    TAG: /* RemoveExercise */1,
+                                    _0: exercise.id
                                   });
                       })
                   }),
@@ -42,7 +44,7 @@ function ExerciseRow(Props) {
             });
 }
 
-var make = ExerciseRow;
+var make = WorkoutTile;
 
 export {
   styles ,

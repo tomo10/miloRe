@@ -2,7 +2,7 @@
 
 import * as Belt_Array from "bs-platform/lib/es6/belt_Array.js";
 
-var dummyExercises = [
+var allExercises = [
   {
     id: 0,
     title: "Bench Press",
@@ -59,19 +59,16 @@ var dummyExercises = [
   }
 ];
 
+var initialState_exercises = [];
+
 var initialState = {
-  exercises: dummyExercises,
+  exercises: initialState_exercises,
   nextId: 5
 };
 
 function reducer(state, action) {
   if (action.TAG === /* AddExercise */0) {
-    var exercises = Belt_Array.concat(state.exercises, [{
-            id: state.nextId,
-            title: action.title,
-            bodyPart: action.bodyPart,
-            equipment: "HardCoded"
-          }]);
+    var exercises = Belt_Array.concat(state.exercises, [action._0]);
     return {
             exercises: exercises,
             nextId: state.nextId
@@ -88,7 +85,7 @@ function reducer(state, action) {
 }
 
 export {
-  dummyExercises ,
+  allExercises ,
   initialState ,
   reducer ,
   

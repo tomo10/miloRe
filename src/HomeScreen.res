@@ -19,10 +19,10 @@ let styles = {
 let make = () => {
   let (state, dispatch) = React.useReducer(Store.reducer, Store.initialState)
   let (searchTerm, setSearchTerm) = React.useState(() => "")
-  let includesSearch = (x: Store.exercise) => Js.String.includes(searchTerm, x.title)
+  let includesSearch = (x: Store.exercise) => Js.String.includes(searchTerm->Js.String2.toLowerCase, x.title->Js.String2.toLowerCase)
   let filteredExercises = {
     open Js.Array2
-    state.exercises->filter(includesSearch)
+    Store.allExercises->filter(includesSearch)
   } 
 
       <Stack space=[4.] padding=[8.] style={styles["container"]} >
@@ -32,12 +32,15 @@ let make = () => {
             </Text>
           </View>
         <SearchBar setSearchTerm  />
+        <ScrollView horizontal={true}>
+          {state.exercises->Array.mapWithIndex((index, exercise) => <WorkoutTile dispatch exercise={exercise} index />)->React.array}
+        </ScrollView>
         <ExerciseInput dispatch />
         <ScrollView >
         <Stack style={styles["exerciseList"]} space=[6.]> 
           {(Js.String2.length(searchTerm) > 0 
           ? filteredExercises 
-          : state.exercises)->Array.mapWithIndex((index, x) => <ExerciseRow dispatch title={x.title} index />  )->React.array}
+          : Store.allExercises)->Array.mapWithIndex((index, x) => <ExerciseRow dispatch exercise={x} index />  )->React.array}
         </Stack>
         </ScrollView>
       </Stack>

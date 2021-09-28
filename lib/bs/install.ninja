@@ -27,8 +27,12 @@ o ExerciseRow.cmi : cp ../bs/src/ExerciseRow.cmi
 o ExerciseRow.cmj : cp ../bs/src/ExerciseRow.cmj
 o ExerciseRow.cmt : cp ../bs/src/ExerciseRow.cmt
 o ExerciseRow.res : cp ../../src/ExerciseRow.res
+o WorkoutTile.cmi : cp ../bs/src/WorkoutTile.cmi
+o WorkoutTile.cmj : cp ../bs/src/WorkoutTile.cmj
+o WorkoutTile.cmt : cp ../bs/src/WorkoutTile.cmt
+o WorkoutTile.res : cp ../../src/WorkoutTile.res
 o ExerciseInput.cmi : cp ../bs/src/ExerciseInput.cmi
 o ExerciseInput.cmj : cp ../bs/src/ExerciseInput.cmj
 o ExerciseInput.cmt : cp ../bs/src/ExerciseInput.cmt
 o ExerciseInput.res : cp ../../src/ExerciseInput.res
-build install.stamp : touch App.cmi App.cmj Store.cmi Store.cmj Theme.cmi Theme.cmj SearchBar.cmi SearchBar.cmj HomeScreen.cmi HomeScreen.cmj ExerciseRow.cmi ExerciseRow.cmj ExerciseInput.cmi ExerciseInput.cmj 
+build install.stamp : touch App.cmi App.cmj Store.cmi Store.cmj Theme.cmi Theme.cmj SearchBar.cmi SearchBar.cmj HomeScreen.cmi HomeScreen.cmj ExerciseRow.cmi ExerciseRow.cmj WorkoutTile.cmi WorkoutTile.cmj ExerciseInput.cmi ExerciseInput.cmj 

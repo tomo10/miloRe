@@ -29,7 +29,7 @@ let make = (~dispatch: Store.action => unit) => {
   let addExercise = () => {
     Js.log("addExercise()")
     resetInput()
-    dispatch(AddExercise({title: exerciseInput, bodyPart: "Upper"}))
+    // dispatch(AddExercise({title: exerciseInput, bodyPart: "Upper"}))
   }
 
   <View style={styles["row"]}>

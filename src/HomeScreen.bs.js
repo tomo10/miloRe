@@ -6,6 +6,7 @@ import * as React from "react";
 import * as SearchBar from "./SearchBar.bs.js";
 import * as Belt_Array from "bs-platform/lib/es6/belt_Array.js";
 import * as ExerciseRow from "./ExerciseRow.bs.js";
+import * as WorkoutTile from "./WorkoutTile.bs.js";
 import * as ReactNative from "react-native";
 import * as ExerciseInput from "./ExerciseInput.bs.js";
 import * as Stacks_component_Stack from "@mobily/stacks/src/Stacks_component_Stack.bs.js";
@@ -41,15 +42,14 @@ var styles = ReactNative.StyleSheet.create({
 function HomeScreen(Props) {
   var match = React.useReducer(Store.reducer, Store.initialState);
   var dispatch = match[1];
-  var state = match[0];
   var match$1 = React.useState(function () {
         return "";
       });
   var searchTerm = match$1[0];
   var includesSearch = function (x) {
-    return x.title.includes(searchTerm);
+    return x.title.toLowerCase().includes(searchTerm.toLowerCase());
   };
-  var filteredExercises = state.exercises.filter(includesSearch);
+  var filteredExercises = Store.allExercises.filter(includesSearch);
   return React.createElement(Stacks_component_Stack.make, {
               space: [4],
               padding: [8],
@@ -63,16 +63,25 @@ function HomeScreen(Props) {
                       })
                 }), React.createElement(SearchBar.make, {
                   setSearchTerm: match$1[1]
+                }), React.createElement(ReactNative.ScrollView, {
+                  horizontal: true,
+                  children: Belt_Array.mapWithIndex(match[0].exercises, (function (index, exercise) {
+                          return React.createElement(WorkoutTile.make, {
+                                      index: index,
+                                      exercise: exercise,
+                                      dispatch: dispatch
+                                    });
+                        }))
                 }), React.createElement(ExerciseInput.make, {
                   dispatch: dispatch
                 }), React.createElement(ReactNative.ScrollView, {
                   children: React.createElement(Stacks_component_Stack.make, {
                         space: [6],
                         style: styles.exerciseList,
-                        children: Belt_Array.mapWithIndex(searchTerm.length > 0 ? filteredExercises : state.exercises, (function (index, x) {
+                        children: Belt_Array.mapWithIndex(searchTerm.length > 0 ? filteredExercises : Store.allExercises, (function (index, x) {
                                 return React.createElement(ExerciseRow.make, {
                                             index: index,
-                                            title: x.title,
+                                            exercise: x,
                                             dispatch: dispatch
                                           });
                               }))

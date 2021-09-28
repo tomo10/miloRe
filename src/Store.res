@@ -26,7 +26,7 @@ type state = {
   nextId: int,
 }
 
-let dummyExercises: array<exercise> = [
+let allExercises: array<exercise> = [
   {id: 0, title: "Bench Press", bodyPart: "Chest", equipment: "Barbell"}, 
   {id: 1, title: "Press Ups", bodyPart: "Chest", equipment: "Body"}, 
   {id: 2, title: "Military Press", bodyPart: "Deltoids", equipment: "Barbell"}, 
@@ -39,21 +39,21 @@ let dummyExercises: array<exercise> = [
   ]
 
 let initialState: state = {
-  exercises: dummyExercises,
+  exercises: [],
   nextId: 5,
 }
 
 type action = 
-| AddExercise({ title: string, bodyPart: string })
+| AddExercise(exercise)
 | RemoveExercise(int)
 // | AddSet({ exercise: exercise, repetitions: int, })
 
 
 let reducer = (state: state, action: action) => {
   switch action {
-  | AddExercise({title, bodyPart}) => {
-    let equipment = "HardCoded"
-    let exercises = Array.concat(state.exercises, [{id: state.nextId, title, bodyPart, equipment}])
+  | AddExercise(exercise) => {
+    // let equipment = "HardCoded"
+    let exercises = Array.concat(state.exercises, [exercise])
     {...state, exercises}
   }
   | RemoveExercise(id) => {
