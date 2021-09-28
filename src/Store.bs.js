@@ -6,22 +6,56 @@ var dummyExercises = [
   {
     id: 0,
     title: "Bench Press",
-    bodyPart: "Chest"
+    bodyPart: "Chest",
+    equipment: "Barbell"
   },
   {
     id: 1,
-    title: "Military Press",
-    bodyPart: "Deltoids"
+    title: "Press Ups",
+    bodyPart: "Chest",
+    equipment: "Body"
   },
   {
     id: 2,
-    title: "Squat",
-    bodyPart: "Tricep Dip"
+    title: "Military Press",
+    bodyPart: "Deltoids",
+    equipment: "Barbell"
   },
   {
     id: 3,
-    title: "Test",
-    bodyPart: "Tricep Dip"
+    title: "Squat",
+    bodyPart: "Legs",
+    equipment: "Barbell"
+  },
+  {
+    id: 4,
+    title: "Deadlift",
+    bodyPart: "Legs",
+    equipment: "Barbell"
+  },
+  {
+    id: 5,
+    title: "Pull Ups",
+    bodyPart: "Back",
+    equipment: "Bar"
+  },
+  {
+    id: 6,
+    title: "Lunges",
+    bodyPart: "Legs",
+    equipment: "Dumbell"
+  },
+  {
+    id: 7,
+    title: "Chest Flys",
+    bodyPart: "Chest",
+    equipment: "Dumbell"
+  },
+  {
+    id: 8,
+    title: "Shoulder Press",
+    bodyPart: "Deltoids",
+    equipment: "Dumbell"
   }
 ];
 
@@ -35,7 +69,8 @@ function reducer(state, action) {
     var exercises = Belt_Array.concat(state.exercises, [{
             id: state.nextId,
             title: action.title,
-            bodyPart: action.bodyPart
+            bodyPart: action.bodyPart,
+            equipment: "HardCoded"
           }]);
     return {
             exercises: exercises,

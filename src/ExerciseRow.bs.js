@@ -9,7 +9,8 @@ import * as Stacks_component_Box from "@mobily/stacks/src/Stacks_component_Box.b
 var styles = ReactNative.StyleSheet.create({
       container: {
         backgroundColor: Theme.color.orange_500,
-        height: 50
+        height: 50,
+        marginVertical: 6
       },
       exerciseList: {
         alignItems: "center",
@@ -36,7 +37,8 @@ function ExerciseRow(Props) {
                                     _0: index
                                   });
                       })
-                  })
+                  }),
+              key: String(index)
             });
 }
 

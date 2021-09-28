@@ -1,10 +1,12 @@
 open Belt
 
+// type equipment = "Barbell" | "Body"
 // bodyPart needs think. s
 type exercise = {
   id: int,
   title: string,
   bodyPart: string,
+  equipment: string,
 }
 
 type set = {
@@ -16,20 +18,24 @@ type set = {
 type workout = {
   name: string,
   date: int,
-
+  exercises: array<set>,
 }
 
 type state = {
-  // workout: Map.String.t<set>,
   exercises: array<exercise>,
   nextId: int,
 }
 
 let dummyExercises: array<exercise> = [
-  {id: 0, title: "Bench Press", bodyPart: "Chest"}, 
-  {id: 1, title: "Military Press", bodyPart: "Deltoids"}, 
-  {id: 2, title: "Squat", bodyPart: "Tricep Dip"},
-  {id: 3, title: "Test", bodyPart: "Tricep Dip"}
+  {id: 0, title: "Bench Press", bodyPart: "Chest", equipment: "Barbell"}, 
+  {id: 1, title: "Press Ups", bodyPart: "Chest", equipment: "Body"}, 
+  {id: 2, title: "Military Press", bodyPart: "Deltoids", equipment: "Barbell"}, 
+  {id: 3, title: "Squat", bodyPart: "Legs", equipment: "Barbell"},
+  {id: 4, title: "Deadlift", bodyPart: "Legs", equipment: "Barbell"},
+  {id: 5, title: "Pull Ups", bodyPart: "Back", equipment: "Bar"},
+  {id: 6, title: "Lunges", bodyPart: "Legs", equipment: "Dumbell"},
+  {id: 7, title: "Chest Flys", bodyPart: "Chest", equipment: "Dumbell"},
+  {id: 8, title: "Shoulder Press", bodyPart: "Deltoids", equipment: "Dumbell"},
   ]
 
 let initialState: state = {
@@ -42,12 +48,12 @@ type action =
 | RemoveExercise(int)
 // | AddSet({ exercise: exercise, repetitions: int, })
 
-// matey boi is using a Map not an array. so two things are not sync atm
 
 let reducer = (state: state, action: action) => {
   switch action {
   | AddExercise({title, bodyPart}) => {
-    let exercises = Array.concat(state.exercises, [{id: state.nextId, title, bodyPart}])
+    let equipment = "HardCoded"
+    let exercises = Array.concat(state.exercises, [{id: state.nextId, title, bodyPart, equipment}])
     {...state, exercises}
   }
   | RemoveExercise(id) => {

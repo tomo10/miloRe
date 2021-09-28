@@ -1,20 +1,20 @@
 rescript = 1
-g_finger := /home/tomo/Development/milo/node_modules/@mobily/stacks/lib/ocaml/install.stamp
-g_finger := /home/tomo/Development/milo/node_modules/@rescript/react/lib/ocaml/install.stamp
-g_finger := /home/tomo/Development/milo/node_modules/rescript-react-native/lib/ocaml/install.stamp
-g_finger := /home/tomo/Development/milo/node_modules/@rescript-bindings/expo/lib/ocaml/install.stamp
-g_finger := /home/tomo/Development/milo/node_modules/wonka/lib/ocaml/install.stamp
-g_finger := /home/tomo/Development/milo/node_modules/rescript-react-navigation/lib/ocaml/install.stamp
-cleaner = /home/tomo/Development/milo/node_modules/gentype/gentype.exe
+g_finger := /home/tomo/Development/Native/Milo/node_modules/@mobily/stacks/lib/ocaml/install.stamp
+g_finger := /home/tomo/Development/Native/Milo/node_modules/@rescript/react/lib/ocaml/install.stamp
+g_finger := /home/tomo/Development/Native/Milo/node_modules/rescript-react-native/lib/ocaml/install.stamp
+g_finger := /home/tomo/Development/Native/Milo/node_modules/@rescript-bindings/expo/lib/ocaml/install.stamp
+g_finger := /home/tomo/Development/Native/Milo/node_modules/wonka/lib/ocaml/install.stamp
+g_finger := /home/tomo/Development/Native/Milo/node_modules/rescript-react-navigation/lib/ocaml/install.stamp
+cleaner = /home/tomo/Development/Native/Milo/node_modules/gentype/gentype.exe
 rule astj
-  command = /home/tomo/Development/milo/node_modules/bs-platform/linux/bsc.exe  -bs-v 9.0.2 -bs-jsx 3 -bs-super-errors -absname -bs-ast -o $out $i
+  command = /home/tomo/Development/Native/Milo/node_modules/bs-platform/linux/bsc.exe  -bs-v 9.0.2 -bs-jsx 3 -bs-super-errors -absname -bs-ast -o $out $i
 o src/App.ast : astj ../../src/App.res
 rule deps
-  command = /home/tomo/Development/milo/node_modules/bs-platform/linux/bsb_helper.exe -hash e7c347b76033f7dd86d0134f1c17f24c $in
+  command = /home/tomo/Development/Native/Milo/node_modules/bs-platform/linux/bsb_helper.exe -hash e7c347b76033f7dd86d0134f1c17f24c $in
   restat = 1
 o src/App.d : deps src/App.ast
 rule mij
-  command = /home/tomo/Development/milo/node_modules/bs-platform/linux/bsc.exe -I src -I /home/tomo/Development/milo/node_modules/@mobily/stacks/lib/ocaml -I /home/tomo/Development/milo/node_modules/@rescript/react/lib/ocaml -I /home/tomo/Development/milo/node_modules/rescript-react-native/lib/ocaml -I /home/tomo/Development/milo/node_modules/@rescript-bindings/expo/lib/ocaml -I /home/tomo/Development/milo/node_modules/wonka/lib/ocaml -I /home/tomo/Development/milo/node_modules/rescript-react-navigation/lib/ocaml -bs-super-errors  -bs-gentype /home/tomo/Development/milo/node_modules/gentype/gentype.exe -bs-package-name my-rescript-expo-app -bs-package-output es6:$in_d:.bs.js -bs-v $g_finger $i
+  command = /home/tomo/Development/Native/Milo/node_modules/bs-platform/linux/bsc.exe -I src -I /home/tomo/Development/Native/Milo/node_modules/@mobily/stacks/lib/ocaml -I /home/tomo/Development/Native/Milo/node_modules/@rescript/react/lib/ocaml -I /home/tomo/Development/Native/Milo/node_modules/rescript-react-native/lib/ocaml -I /home/tomo/Development/Native/Milo/node_modules/@rescript-bindings/expo/lib/ocaml -I /home/tomo/Development/Native/Milo/node_modules/wonka/lib/ocaml -I /home/tomo/Development/Native/Milo/node_modules/rescript-react-navigation/lib/ocaml -bs-super-errors  -bs-gentype /home/tomo/Development/Native/Milo/node_modules/gentype/gentype.exe -bs-package-name my-rescript-expo-app -bs-package-output es6:$in_d:.bs.js -bs-v $g_finger $i
   dyndep = 1
   restat = 1
 o src/App.cmj src/App.cmi ../../src/App.bs.js : mij src/App.ast

@@ -4,7 +4,7 @@ open Stacks
 let styles = {
   open Style
   StyleSheet.create({
-    "container": viewStyle(~backgroundColor=Theme.color.orange_500, ~height=50.->dp, ()),
+    "container": viewStyle(~marginVertical=6.->dp, ~backgroundColor=Theme.color.orange_500, ~height=50.->dp, ()),
     "exerciseList": viewStyle(~alignItems=#center, ~justifyContent=#center, ()),
   })
 }
@@ -12,7 +12,7 @@ let styles = {
 @react.component
 let make = (~index: int, ~title: string, ~dispatch: Store.action => unit) => {
 
-<Box style={styles["container"]} >
+<Box key={index->Belt.Int.toString} style={styles["container"]} >
   <Pressable onPress={_ => dispatch(Store.RemoveExercise(index))}>
     { ReactNative.Pressable.interactionState => 
       <Text key={index->Belt.Int.toString} >{title->React.string}</Text> 
