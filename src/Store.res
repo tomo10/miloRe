@@ -1,5 +1,6 @@
 open Belt
 
+// bodyPart needs think. s
 type exercise = {
   id: int,
   title: string,
@@ -9,6 +10,13 @@ type exercise = {
 type set = {
   exercise: exercise,
   repetitions: int,
+}
+
+// what should structure of workout look like?
+type workout = {
+  name: string,
+  date: int,
+
 }
 
 type state = {
